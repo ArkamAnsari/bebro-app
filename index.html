@@ -72,6 +72,32 @@
       text-decoration: underline;
     }
 
+    /* New Button Styles */
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1E293B;
+      color: #22D3EE;
+      padding: 15px 20px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #22D3EE;
+      color: #0F172A;
+      text-decoration: none;
+    }
+
     .footer {
       text-align: center;
       font-size: 13px;
@@ -85,13 +111,11 @@
 
   <div class="container">
 
-    <!-- 🔷 Header -->
     <div class="header">
       <h1>Be Bro</h1>
       <p>Connect. Play. Dominate.</p>
     </div>
 
-    <!-- 🔷 About -->
     <div class="section">
       <h2>Find Your Squad Instantly</h2>
       <p>
@@ -100,7 +124,6 @@
       </p>
     </div>
 
-    <!-- 🔷 Features -->
     <div class="section">
       <h2>Key Features</h2>
       <ul>
@@ -112,7 +135,6 @@
       </ul>
     </div>
 
-    <!-- 🔷 How It Works -->
     <div class="section">
       <h2>How It Works</h2>
       <p>
@@ -121,37 +143,24 @@
       </p>
     </div>
 
-    <!-- 🔷 Contact -->
     <div class="section">
-      <h2>Contact</h2>
+      <h2>Support & Account</h2>
       <p>Email: <a href="mailto:bebro.app@gmail.com">bebro.app@gmail.com</a></p>
-    </div>
-
-    <!-- 🔷 Account Deletion -->
-    <div class="section">
-      <h2>Request Account Deletion</h2>
+      <br>
       <p>
-        If you want to delete your account and associated data, you can submit a request using the form below:
-      </p>
-      <p>
+        If you want to delete your account and associated data, you can submit a request here: <br>
         👉 <a href="PASTE_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank">Delete Account</a>
       </p>
     </div>
 
-    <!-- 🔷 Privacy Policy -->
     <div class="section">
-      <h2>Privacy Policy</h2>
-      <p>
-        Be Bro collects basic user data such as email, profile information, and in-app activity to provide core features like chat, squad matching, and notifications.
-      </p>
-      <br />
-      <p>
-        We do not sell user data. All data is securely stored and used only to improve app functionality and user experience.
-      </p>
-      <br />
-      <p>
-        Users can request deletion of their data at any time using the account deletion form above.
-      </p>
+      <h2>Legal & Safety</h2>
+      <p>Review our app policies, terms, and safety standards below:</p>
+      <div class="button-group">
+        <a href="privacy.html" class="btn">🛡️ Privacy Policy</a>
+        <a href="child-safety.html" class="btn">🚸 Child Safety Standards</a>
+        <a href="terms.html" class="btn">📄 Terms of Use</a>
+      </div>
     </div>
 
     <div class="footer">
