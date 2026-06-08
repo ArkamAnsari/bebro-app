@@ -6,103 +6,193 @@
   <title>Be Bro - Gamer Network</title>
 
   <style>
+    /* 🎮 GLOBAL RESET & FONT */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
+    /* 🌌 AMBIENT GAMER BACKGROUND (Dark Mode + Neon Glows) */
     body {
-      background: #0F172A;
-      color: #E5E7EB;
-      line-height: 1.6;
+      background-color: #050505;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(225, 29, 72, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+      background-attachment: fixed;
+      color: #F8FAFC;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
+    /* 👑 HEADER STYLES */
     .header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+      padding: 20px;
     }
 
     .header h1 {
-      font-size: 42px;
-      color: #22D3EE;
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      /* Neon Text Gradient */
+      background: linear-gradient(135deg, #ff2a5f, #b026ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 20px rgba(255, 42, 95, 0.4));
+      margin-bottom: 10px;
     }
 
     .header p {
-      font-size: 18px;
-      color: #9CA3AF;
-      margin-top: 10px;
+      font-size: 20px;
+      color: #94A3B8;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
+    /* 📱 iOS GLASSMORPHISM PANELS (The Transparent Look) */
     .section {
-      margin-bottom: 40px;
-      background: #111827;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 0 20px rgba(0,255,255,0.05);
+      background: rgba(30, 41, 59, 0.3);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px); /* Safari support */
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 32px; /* iOS Heavy curves */
+      padding: 35px 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .section h2 {
-      color: #22D3EE;
-      margin-bottom: 12px;
+      font-size: 24px;
+      color: #F8FAFC;
+      margin-bottom: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
+    .section p {
+      color: #CBD5E1;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 🎯 LIST STYLES */
     ul {
-      padding-left: 20px;
+      list-style: none;
+      padding-left: 0;
     }
 
     li {
-      margin-bottom: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      margin-bottom: 10px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.03);
     }
 
     a {
-      color: #22D3EE;
+      color: #ff2a5f;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
 
     a:hover {
+      color: #ff5c84;
       text-decoration: underline;
     }
 
-    /* New Button Styles */
+    /* 🎮 GLASS BUTTONS */
     .button-group {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-top: 20px;
+      margin-top: 15px;
+    }
+
+    @media (min-width: 600px) {
+      .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .btn {
+        flex: 1;
+      }
     }
 
     .btn {
-      display: inline-block;
-      background: #1E293B;
-      color: #22D3EE;
-      padding: 15px 20px;
-      text-align: center;
-      border-radius: 8px;
-      border: 1px solid #334155;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #F8FAFC;
+      padding: 16px 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .btn:hover {
-      background: #22D3EE;
-      color: #0F172A;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
       text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 42, 95, 0.2);
     }
 
+    .btn-danger {
+      background: rgba(225, 29, 72, 0.15);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+      color: #ffe4e6;
+    }
+
+    .btn-danger:hover {
+      background: rgba(225, 29, 72, 0.3);
+      border: 1px solid rgba(225, 29, 72, 0.5);
+      box-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
+    }
+
+    /* 🏁 FOOTER */
     .footer {
       text-align: center;
-      font-size: 13px;
-      color: #6B7280;
-      margin-top: 40px;
+      font-size: 14px;
+      color: #64748B;
+      margin-top: 20px;
+      padding: 20px;
     }
   </style>
 </head>
@@ -117,7 +207,7 @@
     </div>
 
     <div class="section">
-      <h2>Find Your Squad Instantly</h2>
+      <h2>🔥 Find Your Squad Instantly</h2>
       <p>
         Be Bro is a real-time gamer networking app that helps you discover nearby players, join squads, and communicate seamlessly.
         Whether you're looking for teammates or building a gaming community, Be Bro makes it instant and effortless.
@@ -125,7 +215,7 @@
     </div>
 
     <div class="section">
-      <h2>Key Features</h2>
+      <h2>⚡ Key Features</h2>
       <ul>
         <li>🎯 Find nearby gamers based on your game</li>
         <li>💬 Real-time chat and messaging</li>
@@ -136,7 +226,7 @@
     </div>
 
     <div class="section">
-      <h2>How It Works</h2>
+      <h2>🎮 How It Works</h2>
       <p>
         Create your profile, select your favorite games, and start discovering players around you.
         Join SquadHubs, connect with gamers, and jump into matches without waiting.
@@ -144,27 +234,29 @@
     </div>
 
     <div class="section">
-      <h2>Support & Account</h2>
-      <p>Email: <a href="mailto:bebro.app@gmail.com">bebro.app@gmail.com</a></p>
+      <h2>⚙️ Support & Account</h2>
+      <p>Need help? Drop us a line at: <a href="mailto:bebro.app@gmail.com">bebro.app@gmail.com</a></p>
       <br>
-      <p>
-        If you want to delete your account and associated data, you can submit a request here: <br>
-        👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLScpYaKMR3TZrCp49jVujzWNjrP0harslrQhtZ1UBF77NHVH3g/viewform?pli=1" target="_blank">Delete Account</a>
-      </p>
+      <p>If you want to delete your account and all associated data permanently, you can submit a secure request below:</p>
+      <div class="button-group">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScpYaKMR3TZrCp49jVujzWNjrP0harslrQhtZ1UBF77NHVH3g/viewform?pli=1" target="_blank" class="btn btn-danger">
+          🗑️ Request Account Deletion
+        </a>
+      </div>
     </div>
 
     <div class="section">
-      <h2>Legal & Safety</h2>
+      <h2>🛡️ Legal & Safety</h2>
       <p>Review our app policies, terms, and safety standards below:</p>
       <div class="button-group">
-        <a href="privacy.html" class="btn">🛡️ Privacy Policy</a>
-        <a href="child-safety.html" class="btn">🚸 Child Safety Standards</a>
+        <a href="privacy.html" class="btn">🔒 Privacy Policy</a>
+        <a href="child-safety.html" class="btn">🚸 Child Safety</a>
         <a href="terms.html" class="btn">📄 Terms of Use</a>
       </div>
     </div>
 
     <div class="footer">
-      © 2026 Be Bro. All rights reserved.
+      © 2026 MaNafArk Studio. All rights reserved.
     </div>
 
   </div>
